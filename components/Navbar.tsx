@@ -85,55 +85,83 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden flex flex-col gap-1.5 p-2 z-50"
+                className="md:hidden flex flex-col gap-1.5 p-3 z-[60] relative overflow-hidden rounded-full transition-all active:scale-95"
+                style={{
+                    backgroundColor: isMobileMenuOpen ? "rgba(255, 255, 255, 0.1)" : "transparent",
+                }}
                 aria-label="Menu"
             >
                 <motion.span
-                    animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                    className={`w-6 h-0.5 ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-white'} transition-colors duration-300`}
+                    animate={isMobileMenuOpen ? { rotate: 45, y: 7.5, width: "24px" } : { rotate: 0, y: 0, width: "24px" }}
+                    className={`h-0.5 rounded-full ${isScrolled || isMobileMenuOpen ? 'bg-blue-500' : 'bg-white'} transition-colors duration-300`}
                 ></motion.span>
                 <motion.span
-                    animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                    className={`w-6 h-0.5 ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-white'} transition-colors duration-300`}
+                    animate={isMobileMenuOpen ? { opacity: 0, x: -10 } : { opacity: 1, x: 0, width: "18px" }}
+                    className={`h-0.5 rounded-full ${isScrolled || isMobileMenuOpen ? 'bg-blue-500' : 'bg-white'} transition-colors duration-300`}
                 ></motion.span>
                 <motion.span
-                    animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                    className={`w-6 h-0.5 ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-white'} transition-colors duration-300`}
+                    animate={isMobileMenuOpen ? { rotate: -45, y: -7.5, width: "24px" } : { rotate: 0, y: 0, width: "24px" }}
+                    className={`h-0.5 rounded-full ${isScrolled || isMobileMenuOpen ? 'bg-blue-500' : 'bg-white'} transition-colors duration-300`}
                 ></motion.span>
             </motion.button>
 
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: "100%" }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: "100%" }}
-                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 bg-white z-40 md:hidden flex flex-col items-center justify-center gap-8"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 md:hidden bg-[#0B1221]/95 backdrop-blur-2xl flex flex-col pt-32 px-10"
                     >
-                        {navLinks.map((item, i) => (
-                            <motion.a
-                                key={item.name}
-                                href={item.href}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 + i * 0.1 }}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-3xl font-bold text-black hover:text-blue-500 transition-colors"
-                            >
-                                {item.name}
-                            </motion.a>
-                        ))}
-                        <motion.a
-                            href="#waitlist"
-                            initial={{ opacity: 0, y: 20 }}
+                        {/* Background Branding Watermark */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none">
+                            <h2 className="text-[20vw] font-black tracking-tighter uppercase whitespace-nowrap">Bridge</h2>
+                        </div>
+
+                        <div className="flex flex-col gap-10 relative z-10">
+                            {navLinks.map((item, i) => (
+                                <motion.a
+                                    key={item.name}
+                                    href={item.href}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{
+                                        type: "spring",
+                                        damping: 20,
+                                        stiffness: 100,
+                                        delay: i * 0.1
+                                    }}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="text-5xl font-extrabold text-white hover:text-blue-500 transition-colors tracking-tight flex items-center group"
+                                >
+                                    <span className="text-blue-500 mr-4 text-xl font-medium opacity-50">0{i + 1}</span>
+                                    {item.name}
+                                </motion.a>
+                            ))}
+                        </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="bg-blue-500 text-white px-10 py-4 rounded-full text-xl font-bold shadow-xl"
+                            className="mt-auto mb-16 relative z-10"
                         >
-                            Join Waitlist
-                        </motion.a>
+                            <a
+                                href="#waitlist"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="w-full text-center bg-blue-500 text-white rounded-2xl py-6 text-2xl font-bold shadow-2xl block hover:bg-blue-600 transition-colors"
+                            >
+                                Get Started
+                            </a>
+
+                            <div className="flex justify-between items-center mt-12 text-gray-500 text-sm font-medium uppercase tracking-widest">
+                                <span>© 2026 Bridge</span>
+                                <div className="flex gap-4">
+                                    <span className="cursor-pointer hover:text-white transition-colors">TW</span>
+                                    <span className="cursor-pointer hover:text-white transition-colors">IG</span>
+                                </div>
+                            </div>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
