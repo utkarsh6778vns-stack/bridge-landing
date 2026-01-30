@@ -25,32 +25,32 @@ export default function MainContent({ showContent = false }: MainContentProps) {
                 }}
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transform-gpu"
                 style={{
-                    backgroundImage: `url('/bridge_bg.jpg')`,
-                    filter: "brightness(0.55)"
+                    backgroundImage: `url('/hero_bridge.png')`,
+                    filter: "brightness(0.7)"
                 }}
             >
                 {/* Dynamic Moving Glow */}
                 <motion.div
                     animate={{
                         background: [
-                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.12), transparent)",
-                            "radial-gradient(800px circle at 100% 100%, rgba(59, 130, 246, 0.12), transparent)",
-                            "radial-gradient(800px circle at 0% 100%, rgba(59, 130, 246, 0.12), transparent)",
-                            "radial-gradient(800px circle at 100% 0%, rgba(59, 130, 246, 0.12), transparent)",
-                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.12), transparent)",
+                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.1), transparent)",
+                            "radial-gradient(800px circle at 100% 100%, rgba(59, 130, 246, 0.1), transparent)",
+                            "radial-gradient(800px circle at 0% 100%, rgba(59, 130, 246, 0.1), transparent)",
+                            "radial-gradient(800px circle at 100% 0%, rgba(59, 130, 246, 0.1), transparent)",
+                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.1), transparent)",
                         ]
                     }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 z-0 opacity-60"
+                    className="absolute inset-0 z-0 opacity-40"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-transparent to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
             </motion.div>
 
             {/* Hero Content - Full Viewport Height */}
             <main className="relative z-10 flex flex-col justify-end h-screen px-8 pb-8 md:px-20 md:pb-16" id="home">
                 <div className="max-w-5xl">
                     <motion.h1
-                        className="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-black"
+                        className="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-2"
                     >
                         {["Community finds the match", "We bridge the gap"].map((line, i) => (
                             <motion.div
