@@ -28,7 +28,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-20 md:py-6 transition-colors duration-500"
+            className="hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-6 py-4 md:px-20 md:py-6 transition-colors duration-500"
             style={{
                 backgroundColor: isScrolled || isMobileMenuOpen ? "rgba(255, 255, 255, 0.95)" : "transparent",
                 backdropFilter: isScrolled || isMobileMenuOpen ? "blur(10px)" : "none",
