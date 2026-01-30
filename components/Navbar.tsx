@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const accentColor = "#3B82F6";
 
     useEffect(() => {
         const handleScroll = () => {
-            // Change navbar color when scrolled past 80vh (near end of hero section)
             setIsScrolled(window.scrollY > window.innerHeight * 0.8);
         };
 
@@ -17,20 +17,26 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const navLinks = [
+        { name: "Home", href: "#home" },
+        { name: "About", href: "#about" },
+        { name: "Contact", href: "#contact" },
+    ];
+
     return (
         <motion.header
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 md:px-20 transition-colors duration-500"
+            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-20 md:py-6 transition-colors duration-500"
             style={{
-                backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "transparent",
-                backdropFilter: isScrolled ? "blur(10px)" : "none",
+                backgroundColor: isScrolled || isMobileMenuOpen ? "rgba(255, 255, 255, 0.95)" : "transparent",
+                backdropFilter: isScrolled || isMobileMenuOpen ? "blur(10px)" : "none",
             }}
         >
-            <a href="#home" className="flex items-center gap-4 hover:opacity-90 transition-opacity">
+            <a href="#home" className="flex items-center gap-2 md:gap-4 hover:opacity-90 transition-opacity">
                 {/* Mini Logo */}
-                <div className="relative">
+                <div className="relative scale-75 md:scale-100 origin-left">
                     <svg width="72" height="54" viewBox="0 0 100 60" fill="none" className="overflow-visible">
                         <circle cx="50" cy="30" r="15" stroke={accentColor} strokeWidth="3.5" fill="none" />
                         <path
@@ -43,21 +49,21 @@ export default function Navbar() {
                         <circle cx="85" cy="30" r="3" fill={accentColor} />
                     </svg>
                 </div>
-                <span className="text-4xl font-black text-blue-500 tracking-tighter ml-1">Bridge</span>
+                <span className="text-3xl md:text-4xl font-black text-blue-500 tracking-tighter -ml-2 md:ml-1">Bridge</span>
             </a>
 
             <nav className="hidden md:flex items-center gap-10 text-sm font-semibold">
-                {["Home", "About", "Contact"].map((item, i) => (
+                {navLinks.map((item, i) => (
                     <motion.a
-                        key={item}
-                        href={item === "Home" ? "#home" : item === "Contact" ? "#contact" : `#${item.toLowerCase()}`}
+                        key={item.name}
+                        href={item.href}
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.3 + i * 0.1, ease: "easeOut" }}
                         className="relative group transition-colors duration-500"
                         style={{ color: isScrolled ? "#000" : "rgba(255, 255, 255, 0.9)" }}
                     >
-                        {item}
+                        {item.name}
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
                     </motion.a>
                 ))}
@@ -78,13 +84,59 @@ export default function Navbar() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
-                className="md:hidden flex flex-col gap-1.5 p-2"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden flex flex-col gap-1.5 p-2 z-50"
                 aria-label="Menu"
             >
-                <span className={`w-6 h-0.5 ${isScrolled ? 'bg-black' : 'bg-white'} transition-colors`}></span>
-                <span className={`w-6 h-0.5 ${isScrolled ? 'bg-black' : 'bg-white'} transition-colors`}></span>
-                <span className={`w-6 h-0.5 ${isScrolled ? 'bg-black' : 'bg-white'} transition-colors`}></span>
+                <motion.span
+                    animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                    className={`w-6 h-0.5 ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-white'} transition-colors duration-300`}
+                ></motion.span>
+                <motion.span
+                    animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                    className={`w-6 h-0.5 ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-white'} transition-colors duration-300`}
+                ></motion.span>
+                <motion.span
+                    animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                    className={`w-6 h-0.5 ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-white'} transition-colors duration-300`}
+                ></motion.span>
             </motion.button>
+
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, x: "100%" }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: "100%" }}
+                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        className="fixed inset-0 bg-white z-40 md:hidden flex flex-col items-center justify-center gap-8"
+                    >
+                        {navLinks.map((item, i) => (
+                            <motion.a
+                                key={item.name}
+                                href={item.href}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 + i * 0.1 }}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="text-3xl font-bold text-black hover:text-blue-500 transition-colors"
+                            >
+                                {item.name}
+                            </motion.a>
+                        ))}
+                        <motion.a
+                            href="#waitlist"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="bg-blue-500 text-white px-10 py-4 rounded-full text-xl font-bold shadow-xl"
+                        >
+                            Join Waitlist
+                        </motion.a>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.header>
     );
 }

@@ -50,7 +50,7 @@ export default function MainContent({ showContent = false }: MainContentProps) {
             <main className="relative z-10 flex flex-col justify-end h-screen px-8 pb-8 md:px-20 md:pb-16" id="home">
                 <div className="max-w-5xl">
                     <motion.h1
-                        className="text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-black"
+                        className="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-black"
                     >
                         {["Community finds the match", "We bridge the gap"].map((line, i) => (
                             <motion.div

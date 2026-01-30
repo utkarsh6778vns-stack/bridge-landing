@@ -74,7 +74,7 @@ export default function ExpressInterest() {
                     viewport={{ once: true }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-4">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-4">
                         Express Your <span className="text-[#1E90FF]">Interest</span>
                     </h2>
                     <p className="text-gray-600 text-lg">

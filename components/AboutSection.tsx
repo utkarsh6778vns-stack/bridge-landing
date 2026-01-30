@@ -24,7 +24,7 @@ export default function AboutSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className="text-6xl md:text-7xl font-bold mb-32 md:mb-40 leading-tight relative"
+                    className="text-4xl md:text-7xl font-bold mb-20 md:mb-40 leading-tight relative"
                 >
                     Go on your{" "}
                     <span className="relative inline-block">
@@ -53,7 +53,7 @@ export default function AboutSection() {
                         initial={{ opacity: 0, pathLength: 0 }}
                         whileInView={{ opacity: 1, pathLength: 1 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="absolute bottom-[-8rem] md:bottom-[-10rem] left-1/2 md:left-[45%] w-32 h-32 md:w-40 md:h-40 text-blue-500"
+                        className="absolute bottom-[-6rem] md:bottom-[-10rem] left-1/2 md:left-[45%] w-24 h-24 md:w-40 md:h-40 text-blue-500"
                         fill="none"
                     >
                         <motion.path

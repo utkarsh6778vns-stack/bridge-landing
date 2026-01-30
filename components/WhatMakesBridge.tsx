@@ -132,7 +132,7 @@ export default function WhatMakesBridge() {
                     className="relative flex justify-center order-1 lg:order-2"
                 >
                     {/* Main Card Container - Just the image */}
-                    <div className="relative w-[340px] bg-white rounded-[2.5rem] shadow-2xl p-4 overflow-hidden z-20">
+                    <div className="relative w-full max-w-[340px] bg-white rounded-[2.5rem] shadow-2xl p-4 overflow-hidden z-20 mx-auto">
                         <img
                             src="/uploaded_media_1769719640272.png"
                             alt="Chloe Profile Card"
