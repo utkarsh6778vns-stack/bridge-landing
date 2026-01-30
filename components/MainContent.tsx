@@ -26,24 +26,26 @@ export default function MainContent({ showContent = false }: MainContentProps) {
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transform-gpu"
                 style={{
                     backgroundImage: `url('/hero_bridge.png')`,
-                    filter: "brightness(0.7)"
                 }}
             >
+                {/* Overlay for quality and readability */}
+                <div className="absolute inset-0 bg-black/30" />
+
                 {/* Dynamic Moving Glow */}
                 <motion.div
                     animate={{
                         background: [
-                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.1), transparent)",
-                            "radial-gradient(800px circle at 100% 100%, rgba(59, 130, 246, 0.1), transparent)",
-                            "radial-gradient(800px circle at 0% 100%, rgba(59, 130, 246, 0.1), transparent)",
-                            "radial-gradient(800px circle at 100% 0%, rgba(59, 130, 246, 0.1), transparent)",
-                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.1), transparent)",
+                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.08), transparent)",
+                            "radial-gradient(800px circle at 100% 100%, rgba(59, 130, 246, 0.08), transparent)",
+                            "radial-gradient(800px circle at 0% 100%, rgba(59, 130, 246, 0.08), transparent)",
+                            "radial-gradient(800px circle at 100% 0%, rgba(59, 130, 246, 0.08), transparent)",
+                            "radial-gradient(800px circle at 0% 0%, rgba(59, 130, 246, 0.08), transparent)",
                         ]
                     }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     className="absolute inset-0 z-0 opacity-40"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
             </motion.div>
 
             {/* Hero Content - Full Viewport Height */}
