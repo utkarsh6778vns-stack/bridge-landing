@@ -11,107 +11,72 @@ export default function BridgePreloader({ onComplete }: BridgePreloaderProps) {
     useEffect(() => {
         const timer = setTimeout(() => {
             if (onComplete) onComplete();
-        }, 4000); // 4 seconds total for the sequence
+        }, 5000); // Sequence needs time to breathe
         return () => clearTimeout(timer);
     }, [onComplete]);
 
-    // Animation Variants
-    const partVariants: any = {
-        initial: { opacity: 0, scale: 0.8 },
-        animate: (i: number) => ({
-            opacity: 1,
-            scale: 1,
-            transition: {
-                delay: i * 0.5,
-                duration: 0.7,
-                ease: [0.22, 1, 0.36, 1]
-            }
-        })
-    };
-
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0B1221] overflow-hidden px-6">
-            {/* Background Glow */}
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.1 }}
-                className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#3B82F6,transparent_70%)]"
-            />
-
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="relative flex flex-col items-center"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="relative w-full max-w-4xl aspect-[942/248]"
             >
-                <div className="relative w-[300px] md:w-[600px] aspect-[5/1]">
+                <svg
+                    viewBox="0 0 942 248"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full"
+                >
+                    <defs>
+                        <mask id="preloader-mask">
+                            {/* Part 1: Heart (approx center) */}
+                            <motion.rect
+                                x="105" y="85" width="40" height="40" fill="white"
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.5, duration: 0.6 }}
+                            />
+                            {/* Part 2: Circle */}
+                            <motion.rect
+                                x="75" y="55" width="100" height="100" fill="white"
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 1.2, duration: 0.6 }}
+                            />
+                            {/* Part 3: Nodes/Arms */}
+                            <motion.rect
+                                x="10" y="20" width="230" height="180" fill="white"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 1.9, duration: 0.6 }}
+                            />
+                            {/* Part 4: Bridge Text */}
+                            <motion.rect
+                                x="250" y="0" width="700" height="248" fill="white"
+                                initial={{ width: 0 }}
+                                animate={{ width: 700 }}
+                                transition={{ delay: 2.6, duration: 0.8, ease: "easeOut" }}
+                            />
+                        </mask>
+                    </defs>
 
-                    {/* Part 1: Heart (Center of Icon) */}
-                    <motion.div
-                        custom={0}
-                        variants={partVariants}
-                        initial="initial"
-                        animate="animate"
-                        className="absolute inset-0 z-50"
-                        style={{ clipPath: "inset(28% 45.3% 28% 45.3%)" }}
-                    >
-                        <img src="/logo.png" alt="Logo Part" className="w-full h-full object-contain" />
-                    </motion.div>
-
-                    {/* Part 2: Circle (Center Ring) */}
-                    <motion.div
-                        custom={1}
-                        variants={partVariants}
-                        initial="initial"
-                        animate="animate"
-                        className="absolute inset-0 z-40"
-                        style={{ clipPath: "inset(12% 41.5% 12% 41.5%)" }}
-                    >
-                        <img src="/logo.png" alt="Logo Part" className="w-full h-full object-contain" />
-                    </motion.div>
-
-                    {/* Part 3a: Left Node */}
-                    <motion.div
-                        custom={2}
-                        variants={partVariants}
-                        initial="initial"
-                        animate="animate"
-                        className="absolute inset-0 z-30"
-                        style={{ clipPath: "inset(0% 58% 0% 32.5%)" }}
-                    >
-                        <img src="/logo.png" alt="Logo Part" className="w-full h-full object-contain" />
-                    </motion.div>
-
-                    {/* Part 3b: Right Node */}
-                    <motion.div
-                        custom={2.1}
-                        variants={partVariants}
-                        initial="initial"
-                        animate="animate"
-                        className="absolute inset-0 z-30"
-                        style={{ clipPath: "inset(0% 33% 0% 59.4%)" }}
-                    >
-                        <img src="/logo.png" alt="Logo Part" className="w-full h-full object-contain" />
-                    </motion.div>
-
-                    {/* Part 4: Bridge (The Word) */}
-                    <motion.div
-                        custom={3}
-                        variants={partVariants}
-                        initial="initial"
-                        animate="animate"
-                        className="absolute inset-0 z-10"
-                        style={{ clipPath: "inset(0% 0% 0% 68.3%)" }}
-                    >
-                        <img src="/logo.png" alt="Logo Part" className="w-full h-full object-contain" />
-                    </motion.div>
-
-                    {/* Final Shimmer Effect */}
-                    <motion.div
-                        animate={{ opacity: [0, 0.15, 0], scale: [1, 1.02, 1] }}
-                        transition={{ delay: 2.8, duration: 1.2 }}
-                        className="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full"
+                    {/* The actual image revealed by the mask */}
+                    <image
+                        href="/logo.png"
+                        x="0" y="0" width="942" height="248"
+                        mask="url(#preloader-mask)"
                     />
-                </div>
+                </svg>
+
+                {/* Shimmer Effect */}
+                <motion.div
+                    initial={{ left: "-100%" }}
+                    animate={{ left: "200%" }}
+                    transition={{ delay: 3.5, duration: 1.5, ease: "easeInOut" }}
+                    className="absolute inset-x-0 inset-y-0 w-32 bg-white/10 skew-x-12 blur-2xl pointer-events-none"
+                />
             </motion.div>
         </div>
     );
