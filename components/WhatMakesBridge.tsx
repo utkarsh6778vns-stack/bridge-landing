@@ -80,7 +80,7 @@ export default function WhatMakesBridge() {
                                 <div>
                                     <h3 className="font-bold text-lg text-gray-900 mb-2">Curated, Not Crowded</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed">
-                                        Every match is chosen with care, powered by AI and refined through real human insight.
+                                        Every fit is chosen with care, powered by AI and refined through real human insight.
                                     </p>
                                 </div>
                             </div>
@@ -108,13 +108,13 @@ export default function WhatMakesBridge() {
                                     <Users className="w-6 h-6 text-white" fill="white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-900 mb-2">We Match Better Together</h3>
+                                    <h3 className="font-bold text-lg text-gray-900 mb-2">We Fit Better Together</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed">
-                                        A connected community where friends and users help each other match.
+                                        A connected community where friends and users help each other find the fit.
                                     </p>
                                     <div className="mt-4 inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full">
                                         <Users className="w-4 h-4 text-blue-500" />
-                                        <span className="text-xs font-semibold text-blue-600">Community matches made daily</span>
+                                        <span className="text-xs font-semibold text-blue-600">Community fits made daily</span>
                                     </div>
                                 </div>
                             </div>

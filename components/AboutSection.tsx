@@ -127,7 +127,7 @@ export default function AboutSection() {
                         >
                             <h3 className="font-bold text-lg mb-3">100% Community Driven.</h3>
                             <p className="text-sm text-gray-700 leading-relaxed">
-                                Every match is shaped by the people who know the community best, not just data points on a screen.
+                                Every fit is shaped by the people who know the community best, not just data points on a screen.
                             </p>
                         </motion.div>
                     </div>
