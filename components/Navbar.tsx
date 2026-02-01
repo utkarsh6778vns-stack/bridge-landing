@@ -33,32 +33,12 @@ export default function Navbar() {
                 backdropFilter: isScrolled ? "blur(10px)" : "none",
             }}
         >
-            <a href="#home" className="flex items-center gap-2 md:gap-4 hover:opacity-90 transition-opacity">
-                {/* Mini Logo */}
-                <div className="relative scale-[0.65] md:scale-90 origin-left">
-                    <svg width="100" height="60" viewBox="0 0 100 60" fill="none" className="overflow-visible">
-                        {/* Center Circle */}
-                        <circle cx="50" cy="30" r="22" stroke={accentColor} strokeWidth="4.5" fill="none" />
-
-                        {/* Heart - upright and rounded */}
-                        <path
-                            d="M 50 42 C 45 42 40 38 40 32 C 40 26 45 23 50 28 C 55 23 60 26 60 32 C 60 38 55 42 50 42 Z"
-                            stroke={accentColor}
-                            strokeWidth="4.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                        />
-
-                        {/* Connectors */}
-                        <path d="M 28 30 L 10 30" stroke={accentColor} strokeWidth="4.5" strokeLinecap="round" />
-                        <circle cx="10" cy="30" r="4" stroke={accentColor} strokeWidth="4.5" fill="none" />
-
-                        <path d="M 72 30 L 90 30" stroke={accentColor} strokeWidth="4.5" strokeLinecap="round" />
-                        <circle cx="90" cy="30" r="4" stroke={accentColor} strokeWidth="4.5" fill="none" />
-                    </svg>
-                </div>
-                <span className="text-4xl md:text-5xl font-[900] text-blue-500 tracking-tighter -ml-3 md:-ml-1">Bridge</span>
+            <a href="#home" className="flex items-center hover:opacity-90 transition-opacity">
+                <img
+                    src="/logo.png"
+                    alt="Bridge Logo"
+                    className="h-8 md:h-12 w-auto object-contain"
+                />
             </a>
 
             {/* Desktop Navigation */}

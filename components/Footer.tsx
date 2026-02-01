@@ -20,29 +20,12 @@ export default function Footer() {
                     className="flex flex-col items-center mb-12"
                 >
                     {/* Bridge Logo */}
-                    <div className="flex items-center gap-4 mb-6">
-                        <svg width="70" height="42" viewBox="0 0 100 60" fill="none">
-                            {/* Center Circle */}
-                            <circle cx="50" cy="30" r="22" stroke={accentColor} strokeWidth="4.5" fill="none" />
-
-                            {/* Heart - upright and rounded */}
-                            <path
-                                d="M 50 42 C 45 42 40 38 40 32 C 40 26 45 23 50 28 C 55 23 60 26 60 32 C 60 38 55 42 50 42 Z"
-                                stroke={accentColor}
-                                strokeWidth="4.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                fill="none"
-                            />
-
-                            {/* Connectors */}
-                            <path d="M 28 30 L 10 30" stroke={accentColor} strokeWidth="4.5" strokeLinecap="round" />
-                            <circle cx="10" cy="30" r="4" stroke={accentColor} strokeWidth="4.5" fill="none" />
-
-                            <path d="M 72 30 L 90 30" stroke={accentColor} strokeWidth="4.5" strokeLinecap="round" />
-                            <circle cx="90" cy="30" r="4" stroke={accentColor} strokeWidth="4.5" fill="none" />
-                        </svg>
-                        <span className="text-4xl font-[900] text-blue-500 tracking-tighter">Bridge</span>
+                    <div className="mb-6">
+                        <img
+                            src="/logo.png"
+                            alt="Bridge Logo"
+                            className="h-10 md:h-14 w-auto object-contain"
+                        />
                     </div>
 
                     <p className="text-gray-600 text-sm font-medium mb-8">
