@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
         const { name, email, phone, location, interest, smsConsent } = body;
 
         // Validate required fields
-        if (!name || !email || !interest || !phone || !location) {
+        if (!name || !email || !phone || !location) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
                 { status: 400 }
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
                     email,
                     phone: phone || null,
                     location: location || null,
-                    interest,
+                    interest: interest || 'user',
                     sms_consent: smsConsent || false,
                 },
             ]);

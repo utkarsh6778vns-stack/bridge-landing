@@ -10,7 +10,6 @@ export default function ExpressInterest() {
         email: "",
         phone: "",
         location: "",
-        interest: "",
         smsConsent: false,
     });
 
@@ -52,7 +51,6 @@ export default function ExpressInterest() {
                     email: "",
                     phone: "",
                     location: "",
-                    interest: "",
                     smsConsent: false,
                 });
             }, 3000);
@@ -186,26 +184,6 @@ export default function ExpressInterest() {
                                 </label>
                             </div>
 
-                            {/* Interest Dropdown */}
-                            <div className="mb-6">
-                                <label htmlFor="interest" className="block text-sm font-semibold text-gray-700 mb-2">
-                                    What best describes your interest?*
-                                </label>
-                                <select
-                                    id="interest"
-                                    name="interest"
-                                    value={formData.interest}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all bg-white"
-                                >
-                                    <option value="">Select your interest</option>
-                                    <option value="user">I want to use Bridge</option>
-                                    <option value="investor">I'm interested in investing</option>
-                                    <option value="partner">I want to partner with Bridge</option>
-                                    <option value="updates">Just keep me updated</option>
-                                </select>
-                            </div>
 
                             {/* Submit Button */}
                             <button
@@ -213,7 +191,7 @@ export default function ExpressInterest() {
                                 disabled={submitted}
                                 className="w-full bg-[#1E90FF] hover:bg-[#1873CC] text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/30"
                             >
-                                {submitted ? "✓ Joined!" : "Join the list"}
+                                {submitted ? "✓ Joined!" : "Join the waitlist"}
                             </button>
 
                             {/* Disclaimer */}
