@@ -131,12 +131,12 @@ export default function WhatMakesBridge() {
                     viewport={{ once: true }}
                     className="relative flex justify-center order-1 lg:order-2"
                 >
-                    {/* Main Card Container - Just the image */}
-                    <div className="relative w-full max-w-[340px] bg-white rounded-[2.5rem] shadow-2xl p-4 overflow-hidden z-20 mx-auto">
+                    {/* Main Card Container - Image only with shadow */}
+                    <div className="relative w-full max-w-[340px] z-20 mx-auto transform-gpu">
                         <img
                             src="/profile_card_new.png"
                             alt="Chloe Profile Card"
-                            className="w-full h-auto object-contain rounded-[2rem]"
+                            className="w-full h-auto object-contain drop-shadow-2xl"
                         />
                     </div>
 
