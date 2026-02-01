@@ -20,19 +20,12 @@ export default function Footer() {
                     className="flex flex-col items-center mb-12"
                 >
                     {/* Bridge Logo */}
-                    <div className="flex items-center gap-4 mb-6">
-                        <svg width="60" height="45" viewBox="0 0 100 60" fill="none">
-                            <circle cx="50" cy="30" r="15" stroke={accentColor} strokeWidth="3.5" fill="none" />
-                            <path
-                                d="M 50 36 C 48.6 37.4 46.2 37.7 44.6 36.1 C 43 34.5 43 31.9 44.6 30.3 L 50 24.9 L 55.4 30.3 C 57 31.9 57 34.5 55.4 36.1 C 53.8 37.7 51.4 37.4 50 36 Z"
-                                stroke={accentColor} strokeWidth="3.5" fill="none" transform="rotate(180 50 30)"
-                            />
-                            <path d="M 35 30 L 15 30" stroke={accentColor} strokeWidth="3.5" strokeLinecap="round" />
-                            <circle cx="15" cy="30" r="3" fill={accentColor} />
-                            <path d="M 65 30 L 85 30" stroke={accentColor} strokeWidth="3.5" strokeLinecap="round" />
-                            <circle cx="85" cy="30" r="3" fill={accentColor} />
-                        </svg>
-                        <span className="text-3xl font-black text-blue-500 tracking-tighter">Bridge</span>
+                    <div className="mb-6">
+                        <img
+                            src="/logo.png"
+                            alt="Bridge Logo"
+                            className="h-10 md:h-14 w-auto object-contain"
+                        />
                     </div>
 
                     <p className="text-gray-600 text-sm font-medium mb-8">
