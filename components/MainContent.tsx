@@ -54,7 +54,7 @@ export default function MainContent({ showContent = false }: MainContentProps) {
                     <motion.h1
                         className="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-2"
                     >
-                        {["Community finds the fit", "We bridge the gap"].map((line, i) => (
+                        {["The community finds the fit", "We bridge the gap"].map((line, i) => (
                             <motion.div
                                 key={i}
                                 className="py-1"

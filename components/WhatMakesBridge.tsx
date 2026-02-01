@@ -134,12 +134,10 @@ export default function WhatMakesBridge() {
                     {/* Main Card Container - Just the image */}
                     <div className="relative w-full max-w-[340px] bg-white rounded-[2.5rem] shadow-2xl p-4 overflow-hidden z-20 mx-auto">
                         <img
-                            src="/uploaded_media_1769719640272.png"
+                            src="/profile_card_new.png"
                             alt="Chloe Profile Card"
                             className="w-full h-auto object-contain rounded-[2rem]"
                         />
-                        {/* Overlay to hide "Light Blue Bridge" text baked into the image */}
-                        <div className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[60%] h-[10%] bg-white z-30" />
                     </div>
 
                     {/* Background blurred decoration */}
