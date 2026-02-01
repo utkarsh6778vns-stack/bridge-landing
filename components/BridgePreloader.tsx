@@ -107,7 +107,7 @@ export default function BridgePreloader({ onComplete }: BridgePreloaderProps) {
                             strokeLinejoin="round"
                             strokeLinecap="round"
                             fill="none"
-                            initial={{ pathLength: 0, opacity: 0, scale: 1.2 }}
+                            initial={{ pathLength: 0, opacity: 0, scale: 1.2, rotate: 180 }}
                             animate={heartControls}
                             style={{ originX: "50%", originY: "50%" }}
                         />
