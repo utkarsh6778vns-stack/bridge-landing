@@ -58,7 +58,7 @@ export default function WhatMakesBridge() {
                     className="space-y-12 order-2 lg:order-1"
                 >
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">What makes Bridge</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4">What makes</h2>
                         <div className="inline-block bg-[#1E90FF] rounded-full px-6 py-2">
                             <span className="text-white text-3xl md:text-4xl font-bold font-mono tracking-wide">
                                 {displayedText}
@@ -138,6 +138,8 @@ export default function WhatMakesBridge() {
                             alt="Chloe Profile Card"
                             className="w-full h-auto object-contain rounded-[2rem]"
                         />
+                        {/* Overlay to hide "Light Blue Bridge" text baked into the image */}
+                        <div className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[60%] h-[10%] bg-white z-30" />
                     </div>
 
                     {/* Background blurred decoration */}
