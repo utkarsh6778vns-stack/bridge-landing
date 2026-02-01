@@ -35,20 +35,30 @@ export default function Navbar() {
         >
             <a href="#home" className="flex items-center gap-2 md:gap-4 hover:opacity-90 transition-opacity">
                 {/* Mini Logo */}
-                <div className="relative scale-75 md:scale-100 origin-left">
-                    <svg width="72" height="54" viewBox="0 0 100 60" fill="none" className="overflow-visible">
-                        <circle cx="50" cy="30" r="15" stroke={accentColor} strokeWidth="3.5" fill="none" />
+                <div className="relative scale-[0.65] md:scale-90 origin-left">
+                    <svg width="100" height="60" viewBox="0 0 100 60" fill="none" className="overflow-visible">
+                        {/* Center Circle */}
+                        <circle cx="50" cy="30" r="22" stroke={accentColor} strokeWidth="4.5" fill="none" />
+
+                        {/* Heart - upright and rounded */}
                         <path
-                            d="M 50 36 C 48.6 37.4 46.2 37.7 44.6 36.1 C 43 34.5 43 31.9 44.6 30.3 L 50 24.9 L 55.4 30.3 C 57 31.9 57 34.5 55.4 36.1 C 53.8 37.7 51.4 37.4 50 36 Z"
-                            stroke={accentColor} strokeWidth="3.5" fill="none" transform="rotate(180 50 30)"
+                            d="M 50 42 C 45 42 40 38 40 32 C 40 26 45 23 50 28 C 55 23 60 26 60 32 C 60 38 55 42 50 42 Z"
+                            stroke={accentColor}
+                            strokeWidth="4.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            fill="none"
                         />
-                        <path d="M 35 30 L 15 30" stroke={accentColor} strokeWidth="3.5" strokeLinecap="round" />
-                        <circle cx="15" cy="30" r="3" fill={accentColor} />
-                        <path d="M 65 30 L 85 30" stroke={accentColor} strokeWidth="3.5" strokeLinecap="round" />
-                        <circle cx="85" cy="30" r="3" fill={accentColor} />
+
+                        {/* Connectors */}
+                        <path d="M 28 30 L 10 30" stroke={accentColor} strokeWidth="4.5" strokeLinecap="round" />
+                        <circle cx="10" cy="30" r="4" stroke={accentColor} strokeWidth="4.5" fill="none" />
+
+                        <path d="M 72 30 L 90 30" stroke={accentColor} strokeWidth="4.5" strokeLinecap="round" />
+                        <circle cx="90" cy="30" r="4" stroke={accentColor} strokeWidth="4.5" fill="none" />
                     </svg>
                 </div>
-                <span className="text-3xl md:text-4xl font-black text-blue-500 tracking-tighter -ml-2 md:ml-1">Bridge</span>
+                <span className="text-4xl md:text-5xl font-[900] text-blue-500 tracking-tighter -ml-3 md:-ml-1">Bridge</span>
             </a>
 
             {/* Desktop Navigation */}

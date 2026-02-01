@@ -70,77 +70,80 @@ export default function BridgePreloader({ onComplete }: BridgePreloaderProps) {
                         xmlns="http://www.w3.org/2000/svg"
                         className="overflow-visible"
                     >
-                        {/* Left Arm */}
+                        {/* Left Connector */}
                         <motion.path
-                            d="M 90 60 L 50 60"
+                            d="M 75 60 L 30 60"
                             stroke={accentColor}
-                            strokeWidth="3.5"
+                            strokeWidth="5"
                             strokeLinecap="round"
                             initial={{ pathLength: 0, opacity: 0 }}
                             animate={lineControls}
                         />
                         <motion.circle
-                            cx="50"
+                            cx="30"
                             cy="60"
-                            r="4.5"
-                            fill={accentColor}
+                            r="8"
+                            stroke={accentColor}
+                            strokeWidth="5"
+                            fill="none"
                             initial={{ opacity: 0 }}
                             animate={lineControls}
                         />
 
-                        {/* Circle around Heart */}
+                        {/* Center Circle */}
                         <motion.circle
                             cx="120"
                             cy="60"
-                            r="30"
+                            r="45"
                             stroke={accentColor}
-                            strokeWidth="3.5"
+                            strokeWidth="5"
                             fill="none"
                             initial={{ pathLength: 0, opacity: 0 }}
                             animate={circleControls}
                         />
 
-                        {/* Heart Icon */}
+                        {/* Heart Icon - Upright and Rounded */}
                         <motion.path
-                            d="M 120 70.35 C 117.2 73.2 112.4 73.8 109.2 70.6 C 106 67.4 106 62.2 109.2 59 L 120 48.2 L 130.8 59 C 134 62.2 134 67.4 130.8 70.6 C 127.6 73.8 122.8 73.2 120 70.35 Z"
+                            d="M 120 84 C 110 84 100 75 100 62 C 100 49 110 42 120 54 C 130 42 140 49 140 62 C 140 75 130 84 120 84 Z"
                             stroke={accentColor}
-                            strokeWidth="3.5"
+                            strokeWidth="5"
                             strokeLinejoin="round"
                             strokeLinecap="round"
                             fill="none"
-                            initial={{ pathLength: 0, opacity: 0, scale: 0.8, rotate: 180 }}
+                            initial={{ pathLength: 0, opacity: 0, scale: 0.8 }}
                             animate={heartControls}
                             style={{ originX: "50%", originY: "50%" }}
                         />
 
-                        {/* Right Arm */}
+                        {/* Right Connector */}
                         <motion.path
-                            d="M 150 60 L 190 60"
+                            d="M 165 60 L 210 60"
                             stroke={accentColor}
-                            strokeWidth="3.5"
+                            strokeWidth="5"
                             strokeLinecap="round"
                             initial={{ pathLength: 0, opacity: 0 }}
                             animate={lineControls}
                         />
                         <motion.circle
-                            cx="190"
+                            cx="210"
                             cy="60"
-                            r="4.5"
-                            fill={accentColor}
+                            r="8"
+                            stroke={accentColor}
+                            strokeWidth="5"
+                            fill="none"
                             initial={{ opacity: 0 }}
                             animate={lineControls}
                         />
-
                     </svg>
                 </div>
 
                 {/* Text "Bridge" */}
                 <motion.div
-                    className="md:ml-2"
+                    className="md:ml-4"
                     initial={{ opacity: 0, y: 10, x: -20 }}
                     animate={textControls}
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-[#3B82F6] tracking-tighter">Bridge</h1>
+                    <h1 className="text-6xl md:text-8xl font-[900] text-[#3B82F6] tracking-tighter">Bridge</h1>
                 </motion.div>
             </div>
         </div>
