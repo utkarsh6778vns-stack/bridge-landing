@@ -58,7 +58,7 @@ export default function WhatMakesBridge() {
                     className="space-y-12 order-2 lg:order-1"
                 >
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">What makes</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4">What makes Bridge</h2>
                         <div className="inline-block bg-[#1E90FF] rounded-full px-6 py-2">
                             <span className="text-white text-3xl md:text-4xl font-bold font-mono tracking-wide">
                                 {displayedText}
@@ -78,9 +78,9 @@ export default function WhatMakesBridge() {
                                     <Star className="w-6 h-6 text-white" fill="white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Curated, Not Crowded</h3>
+                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Your people help you find your person.</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed">
-                                        Every fit is chosen with care, powered by AI and refined through real human insight.
+                                        Friends help validate matches before they ever reach you.
                                     </p>
                                 </div>
                             </div>
@@ -93,9 +93,9 @@ export default function WhatMakesBridge() {
                                     <Clock className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Five Minutes A Day</h3>
+                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Earn karma. Build streaks.</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed">
-                                        Because meaningful connection shouldn't feel like another job.
+                                        The more you help others, the more visible your profile becomes.
                                     </p>
                                 </div>
                             </div>
@@ -108,14 +108,10 @@ export default function WhatMakesBridge() {
                                     <Users className="w-6 h-6 text-white" fill="white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-900 mb-2">We Fit Better Together</h3>
+                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Assist your friends.</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed">
-                                        A connected community where friends and users help each other find the fit.
+                                        Not a fit for you? Recommend them to a friend who may be a better fit.
                                     </p>
-                                    <div className="mt-4 inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full">
-                                        <Users className="w-4 h-4 text-blue-500" />
-                                        <span className="text-xs font-semibold text-blue-600">Community fits made daily</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
