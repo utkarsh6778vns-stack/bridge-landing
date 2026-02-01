@@ -72,7 +72,7 @@ export default function AboutSection() {
                     </motion.svg>
                 </motion.h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pl-0 md:pl-12 lg:pl-24">
                     {/* Left Column - Feature Cards (2x2 Grid with Spacers) */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {/* Placeholder for removed left-most card */}
@@ -86,8 +86,8 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             className="bg-blue-50 p-6 rounded-2xl"
                         >
-                            <h3 className="font-bold text-lg mb-3">Curated individual matches</h3>
-                            <p className="text-sm text-gray-700 leading-relaxed">
+                            <h3 className="font-bold text-xl md:text-2xl mb-3">Curated individual matches</h3>
+                            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                                 Where you only engage with one person at a time
                             </p>
                         </motion.div>
@@ -103,8 +103,8 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             className="bg-blue-50 p-6 rounded-2xl"
                         >
-                            <h3 className="font-bold text-lg mb-3">5 minutes a day</h3>
-                            <p className="text-sm text-gray-700 leading-relaxed">
+                            <h3 className="font-bold text-xl md:text-2xl mb-3">5 minutes a day</h3>
+                            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                                 Because meaningful connection shouldn't feel like another job.
                             </p>
                         </motion.div>
