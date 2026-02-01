@@ -73,8 +73,11 @@ export default function AboutSection() {
                 </motion.h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Left Column - Feature Cards (Stacked) */}
-                    <div className="grid grid-cols-1 gap-6">
+                    {/* Left Column - Feature Cards (2x2 Grid with Spacers) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {/* Placeholder for removed left-most card */}
+                        <div className="hidden sm:block"></div>
+
                         {/* Card: Curated individual matches */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -88,6 +91,9 @@ export default function AboutSection() {
                                 Where you only engage with one person at a time
                             </p>
                         </motion.div>
+
+                        {/* Placeholder for removed left-most card */}
+                        <div className="hidden sm:block"></div>
 
                         {/* Card: 5 minutes a day */}
                         <motion.div
