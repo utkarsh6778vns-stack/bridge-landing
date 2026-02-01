@@ -72,7 +72,7 @@ export default function AboutSection() {
                     </motion.svg>
                 </motion.h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pl-0 md:pl-8 lg:pl-16 xl:pl-32">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Column - Feature Cards (2x2 Grid with Spacers) */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {/* Placeholder for removed left-most card */}
