@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="min-h-screen bg-white text-black px-8 py-20 md:px-20 md:py-32">
+        <section id="about" className="min-h-screen bg-white text-black px-8 py-20 md:px-20 md:py-32 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.p
@@ -72,7 +72,7 @@ export default function AboutSection() {
                     </motion.svg>
                 </motion.h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pl-0 md:pl-16 lg:pl-32">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pl-0 md:pl-8 lg:pl-16 xl:pl-32">
                     {/* Left Column - Feature Cards (2x2 Grid with Spacers) */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {/* Placeholder for removed left-most card */}
@@ -86,8 +86,8 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             className="bg-blue-50 p-8 rounded-2xl"
                         >
-                            <h3 className="font-bold text-2xl md:text-3xl mb-3">Curated individual matches</h3>
-                            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                            <h3 className="font-bold text-xl md:text-2xl lg:text-3xl mb-3">Curated individual matches</h3>
+                            <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                                 Where you only engage with one person at a time
                             </p>
                         </motion.div>
@@ -103,8 +103,8 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             className="bg-blue-50 p-8 rounded-2xl"
                         >
-                            <h3 className="font-bold text-2xl md:text-3xl mb-3">5 minutes a day</h3>
-                            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                            <h3 className="font-bold text-xl md:text-2xl lg:text-3xl mb-3">5 minutes a day</h3>
+                            <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                                 Because meaningful connection shouldn't feel like another job.
                             </p>
                         </motion.div>
