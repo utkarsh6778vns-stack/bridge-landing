@@ -49,8 +49,8 @@ export default function MainContent({ showContent = false }: MainContentProps) {
             </motion.div>
 
             {/* Hero Content - Full Viewport Height */}
-            <main className="relative z-10 flex flex-col justify-center h-[100dvh] px-6 md:px-20" id="home">
-                <div className="max-w-5xl md:pb-16">
+            <main className="relative z-10 flex flex-col justify-end h-[100dvh] px-6 md:px-20 pb-20 md:pb-16" id="home">
+                <div className="max-w-5xl">
                     <motion.h1
                         className="text-[1.6rem] sm:text-2xl md:text-6xl font-extrabold leading-[1.3] md:leading-[1.1] tracking-tight text-white mb-2"
                     >
