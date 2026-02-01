@@ -130,7 +130,7 @@ export default function WhatMakesBridge() {
                     {/* Main Card Container - Image only with shadow */}
                     <div className="relative w-full max-w-[340px] z-20 mx-auto transform-gpu overflow-hidden">
                         <img
-                            src="/profile_card_final.png"
+                            src="/profile_card_revised.png"
                             alt="Chloe Profile Card"
                             className="w-full h-auto object-contain drop-shadow-2xl"
                         />
