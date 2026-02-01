@@ -128,11 +128,11 @@ export default function WhatMakesBridge() {
                     className="relative flex justify-center order-1 lg:order-2"
                 >
                     {/* Main Card Container - Image only with shadow */}
-                    <div className="relative w-full max-w-[340px] z-20 mx-auto transform-gpu overflow-hidden rounded-[2.5rem]">
+                    <div className="relative w-full max-w-[340px] z-20 mx-auto transform-gpu overflow-hidden rounded-[3rem] aspect-[1/1.6]">
                         <img
-                            src="/profile_card_exact.png"
+                            src="/profile_card_newest.png"
                             alt="Chloe Profile Card"
-                            className="w-full h-auto object-contain drop-shadow-2xl rounded-[2.5rem]"
+                            className="w-full h-full object-cover scale-[1.05] drop-shadow-2xl translate-y-[-2%]"
                         />
                     </div>
 
