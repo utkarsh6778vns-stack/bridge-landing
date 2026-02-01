@@ -132,12 +132,14 @@ export default function WhatMakesBridge() {
                     className="relative flex justify-center order-1 lg:order-2"
                 >
                     {/* Main Card Container - Image only with shadow */}
-                    <div className="relative w-full max-w-[340px] z-20 mx-auto transform-gpu">
+                    <div className="relative w-full max-w-[340px] z-20 mx-auto transform-gpu overflow-hidden">
                         <img
                             src="/profile_card_new.png"
                             alt="Chloe Profile Card"
                             className="w-full h-auto object-contain drop-shadow-2xl"
                         />
+                        {/* Hide "Light Blue Bridge" text baked into the new image */}
+                        <div className="absolute top-[8.5%] left-1/2 -translate-x-1/2 w-[55%] h-[8%] bg-white z-30" />
                     </div>
 
                     {/* Background blurred decoration */}
