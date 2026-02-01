@@ -76,7 +76,7 @@ export default function ExpressInterest() {
                         Express Your <span className="text-[#1E90FF]">Interest</span>
                     </h2>
                     <p className="text-gray-600 text-lg">
-                        Whether you want to use Bridge, invest, partner, or just stay updated.
+                        Join the Bridge waitlist now
                     </p>
 
                     {/* Badge */}
