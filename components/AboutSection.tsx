@@ -73,9 +73,9 @@ export default function AboutSection() {
                 </motion.h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Left Column - Feature Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        {/* Card 1 */}
+                    {/* Left Column - Feature Cards (Stacked) */}
+                    <div className="grid grid-cols-1 gap-6">
+                        {/* Card: Curated individual matches */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -83,13 +83,13 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             className="bg-blue-50 p-6 rounded-2xl"
                         >
-                            <h3 className="font-bold text-lg mb-3">We Bridge the Gap.</h3>
+                            <h3 className="font-bold text-lg mb-3">Curated individual matches</h3>
                             <p className="text-sm text-gray-700 leading-relaxed">
-                                We remove the noise of superficial swipes to create a direct path to the person you are meant to meet.
+                                Where you only engage with one person at a time
                             </p>
                         </motion.div>
 
-                        {/* Card 2 */}
+                        {/* Card: 5 minutes a day */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -97,57 +97,24 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             className="bg-blue-50 p-6 rounded-2xl"
                         >
-                            <h3 className="font-bold text-lg mb-3">Matching Souls, Not Profiles.</h3>
+                            <h3 className="font-bold text-lg mb-3">5 minutes a day</h3>
                             <p className="text-sm text-gray-700 leading-relaxed">
-                                Love isn't a digital catalog search. At Bridge, we believe in resonance over algorithms.
-                            </p>
-                        </motion.div>
-
-                        {/* Card 3 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            viewport={{ once: true }}
-                            className="bg-blue-50 p-6 rounded-2xl"
-                        >
-                            <h3 className="font-bold text-lg mb-3">Intentional Connections.</h3>
-                            <p className="text-sm text-gray-700 leading-relaxed">
-                                Nurturing relationships through shared values and genuine, soulful intent.
-                            </p>
-                        </motion.div>
-
-                        {/* Card 4 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
-                            viewport={{ once: true }}
-                            className="bg-blue-50 p-6 rounded-2xl"
-                        >
-                            <h3 className="font-bold text-lg mb-3">100% Community Driven.</h3>
-                            <p className="text-sm text-gray-700 leading-relaxed">
-                                Every fit is shaped by the people who know the community best, not just data points on a screen.
+                                Because meaningful connection shouldn't feel like another job.
                             </p>
                         </motion.div>
                     </div>
 
-                    {/* Right Column - Description */}
+                    {/* Right Column - Large Bento Card */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
                         viewport={{ once: true }}
                         className="bg-blue-50 p-8 md:p-12 rounded-2xl flex flex-col justify-center"
                     >
-                        <p className="text-base md:text-lg leading-relaxed mb-6">
-                            At Bridge, we believe love is the ultimate connection, not a digital catalog search. Our mission is simple: we bridge the gap between you and the person you are meant to meet.
-                        </p>
-                        <p className="text-base md:text-lg leading-relaxed mb-6">
-                            In an era of superficial swipes, we stand for something deeper. We are a community where The community finds the fit nurturing connections through shared values and genuine intent.
-                        </p>
-                        <p className="text-base md:text-lg leading-relaxed font-semibold">
-                            We aren't matching profiles; we're matching souls.
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6">Intentional Algorithmic Dating</h3>
+                        <p className="text-base md:text-lg leading-relaxed text-gray-700">
+                            The algorithm, powered by real human insights, suggests the single best match for you. Then your friends decide if the fit is right or not.
                         </p>
                     </motion.div>
                 </div>
