@@ -144,7 +144,7 @@ export default function AboutSection() {
                             At Bridge, we believe love is the ultimate connection, not a digital catalog search. Our mission is simple: we bridge the gap between you and the person you are meant to meet.
                         </p>
                         <p className="text-base md:text-lg leading-relaxed mb-6">
-                            In an era of superficial swipes, we stand for something deeper. We are a community where the community finds the match nurturing connections through shared values and genuine intent.
+                            In an era of superficial swipes, we stand for something deeper. We are a community where the community finds the fit nurturing connections through shared values and genuine intent.
                         </p>
                         <p className="text-base md:text-lg leading-relaxed font-semibold">
                             We aren't matching profiles; we're matching souls.
