@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Clock, Users } from "lucide-react";
 
+import ProfileCard from "./ProfileCard";
+
 export default function WhatMakesBridge() {
     const words = ["intentional", "effortless", "different", "for you"];
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -72,7 +74,10 @@ export default function WhatMakesBridge() {
 
                     <div className="space-y-6">
                         {/* Feature 1 */}
-                        <div className="bg-white hover:shadow-lg transition-shadow p-6 rounded-2xl border border-gray-100/50">
+                        <motion.div
+                            whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
+                            className="bg-white shadow-md hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 cursor-pointer"
+                        >
                             <div className="flex items-start space-x-4">
                                 <div className="bg-[#1E90FF] p-3 rounded-full shrink-0">
                                     <Star className="w-6 h-6 text-white" fill="white" />
@@ -84,10 +89,13 @@ export default function WhatMakesBridge() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Feature 2 */}
-                        <div className="bg-white hover:shadow-lg transition-shadow p-6 rounded-2xl border border-gray-100/50">
+                        <motion.div
+                            whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
+                            className="bg-white shadow-md hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 cursor-pointer"
+                        >
                             <div className="flex items-start space-x-4">
                                 <div className="bg-[#1E90FF] p-3 rounded-full shrink-0">
                                     <Clock className="w-6 h-6 text-white" />
@@ -99,10 +107,13 @@ export default function WhatMakesBridge() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Feature 3 */}
-                        <div className="bg-white hover:shadow-lg transition-shadow p-6 rounded-2xl border border-gray-100/50">
+                        <motion.div
+                            whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
+                            className="bg-white shadow-md hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 cursor-pointer"
+                        >
                             <div className="flex items-start space-x-4">
                                 <div className="bg-[#1E90FF] p-3 rounded-full shrink-0">
                                     <Users className="w-6 h-6 text-white" fill="white" />
@@ -114,12 +125,12 @@ export default function WhatMakesBridge() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                     </div>
                 </motion.div>
 
-                {/* Right Column: Phone Mockup */}
+                {/* Right Column: Profile Card */}
                 <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -127,14 +138,7 @@ export default function WhatMakesBridge() {
                     viewport={{ once: true }}
                     className="relative flex justify-center order-1 lg:order-2"
                 >
-                    {/* Main Card Container - Image only with shadow */}
-                    <div className="relative w-full max-w-[340px] z-20 mx-auto transform-gpu overflow-hidden rounded-[2.5rem]">
-                        <img
-                            src="/profile_card_exact.png"
-                            alt="Chloe Profile Card"
-                            className="w-full h-auto object-contain drop-shadow-2xl rounded-[2.5rem]"
-                        />
-                    </div>
+                    <ProfileCard />
 
                     {/* Background blurred decoration */}
                     <div className="absolute top-1/4 translate-x-12 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10 animate-blob"></div>

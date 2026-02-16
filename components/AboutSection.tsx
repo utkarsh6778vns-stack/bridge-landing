@@ -82,9 +82,10 @@ export default function AboutSection() {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-blue-50 p-6 rounded-2xl"
+                            className="bg-blue-50 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
                         >
                             <h3 className="font-bold text-lg md:text-xl mb-2">Curated individual matches</h3>
                             <p className="text-sm md:text-base text-gray-700 leading-relaxed">
@@ -99,9 +100,10 @@ export default function AboutSection() {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                             viewport={{ once: true }}
-                            className="bg-blue-50 p-6 rounded-2xl"
+                            className="bg-blue-50 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
                         >
                             <h3 className="font-bold text-lg md:text-xl mb-2">5 minutes a day</h3>
                             <p className="text-sm md:text-base text-gray-700 leading-relaxed">
@@ -114,9 +116,10 @@ export default function AboutSection() {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
+                        whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="bg-blue-50 p-8 md:p-10 rounded-2xl flex flex-col justify-center"
+                        className="bg-blue-50 p-8 md:p-10 rounded-2xl flex flex-col justify-center shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
                     >
                         <h3 className="text-xl md:text-2xl font-bold mb-4">Intentional Algorithmic Dating</h3>
                         <p className="text-sm md:text-base leading-relaxed text-gray-700">
