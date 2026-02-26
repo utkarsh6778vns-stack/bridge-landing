@@ -52,6 +52,24 @@ export default function Footer() {
                             <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                             <span className="text-sm font-medium">@bridge.date</span>
                         </a>
+
+                        <div className="w-px h-4 bg-gray-300 hidden md:block"></div>
+
+                        <a
+                            href="/privacy"
+                            className="text-gray-600 hover:text-blue-500 transition-colors text-sm font-medium"
+                        >
+                            Privacy Policy
+                        </a>
+
+                        <div className="w-px h-4 bg-gray-300 hidden md:block"></div>
+
+                        <a
+                            href="/terms"
+                            className="text-gray-600 hover:text-blue-500 transition-colors text-sm font-medium"
+                        >
+                            Terms of Service
+                        </a>
                     </div>
                 </motion.div>
 
