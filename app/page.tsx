@@ -5,6 +5,7 @@ import BridgePreloader from "@/components/BridgePreloader";
 import MainContent from "@/components/MainContent";
 import AboutSection from "@/components/AboutSection";
 import WhatMakesBridge from "@/components/WhatMakesBridge";
+import NoSwipingSection from "@/components/NoSwipingSection";
 import ExpressInterest from "@/components/ExpressInterest";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -22,6 +23,7 @@ export default function Home() {
       <div className="scroll-smooth">
         <MainContent showContent={stage === "main"} />
         <AboutSection />
+        <NoSwipingSection />
         <WhatMakesBridge />
         <ExpressInterest />
         <Footer />
