@@ -20,17 +20,18 @@ export default function NoSwipingSection() {
     });
 
     // Photo moves upward (parallax) as section scrolls into view
-    const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+    // Subtle parallax that keeps image within bounds
+    const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
 
     return (
         <section
             ref={sectionRef}
-            className="relative w-full min-h-screen overflow-hidden"
+            className="relative w-full h-[85dvh] overflow-hidden"
         >
             {/* Full-bleed Parallax Photo */}
             <motion.div
                 style={{ y: imageY }}
-                className="absolute inset-0 w-full h-[120%] -top-[10%]"
+                className="absolute inset-0 w-full h-[140%] -top-[20%]"
             >
                 <img
                     src="/crowd_photo.jpg"
@@ -38,12 +39,23 @@ export default function NoSwipingSection() {
                     className="w-full h-full object-cover object-center"
                 />
                 {/* Strong dark overlay so text is readable */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+                {/* Much brighter overlay as requested */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
             </motion.div>
 
-            {/* Text pinned to bottom-left, animates in on scroll */}
-            <div className="relative z-10 flex flex-col justify-end min-h-screen px-8 md:px-20 pb-20 md:pb-28 pt-32">
+            {/* Text at top, withRice badge for consistency */}
+            <div className="relative z-10 flex flex-col justify-start h-full px-8 md:px-20 pb-20 pt-16 md:pt-24">
                 <div className="max-w-4xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#34D399]/20 to-[#059669]/20 border border-[#34D399]/40 shadow-[0_0_20px_rgba(52,211,153,0.3)] ring-1 ring-white/10 rounded-full px-4 py-1.5 mb-10 backdrop-blur-md w-fit"
+                    >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-pulse"></span>
+                        <span className="text-[#34D399] text-xs font-semibold tracking-wide uppercase">Community</span>
+                    </motion.div>
                     {lines.map((line, i) => (
                         <div key={line} className="overflow-hidden">
                             <motion.h2
@@ -56,6 +68,7 @@ export default function NoSwipingSection() {
                                     ease: [0.22, 1, 0.36, 1],
                                 }}
                                 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight"
+                                style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)" }}
                             >
                                 {line}
                             </motion.h2>

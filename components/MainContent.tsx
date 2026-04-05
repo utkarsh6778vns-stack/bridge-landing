@@ -33,7 +33,7 @@ export default function MainContent({ showContent = false }: MainContentProps) {
                 }}
             >
                 {/* Overlay for quality and readability */}
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/10" />
 
                 {/* Dynamic Moving Glow */}
                 <motion.div
@@ -49,13 +49,13 @@ export default function MainContent({ showContent = false }: MainContentProps) {
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     className="absolute inset-0 z-0 opacity-40"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
             </motion.div>
 
             {/* Hero Content - Full Viewport Height */}
             <motion.main
                 style={{ y: heroY }}
-                className="relative z-10 flex-1 flex flex-col items-center justify-center text-center h-[100dvh] px-6 pb-24" id="home"
+                className="relative z-10 flex-1 flex flex-col items-center justify-center text-center h-[85dvh] px-6 pb-16" id="home"
             >
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function MainContent({ showContent = false }: MainContentProps) {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
                     className="text-5xl md:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-10"
-                    style={{ letterSpacing: "-2px" }}
+                    style={{ letterSpacing: "-2px", textShadow: "0 2px 20px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)" }}
                 >
                     Your people help you<br />find your person.
                 </motion.h1>
