@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-
-const lines = [
-    "No swiping.",
-    "No algorithm guessing.",
-    "Just your people.",
-];
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const subtitle = "The people who know you best decide who you should meet.";
 
@@ -19,66 +13,59 @@ export default function NoSwipingSection() {
         offset: ["start end", "end start"],
     });
 
-    // Photo moves upward (parallax) as section scrolls into view
-    const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+    // Smooth scroll progress
+    const smoothProgress = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
+    // Background image parallax
+    const imageY = useTransform(smoothProgress, [0, 1], ["-15%", "15%"]);
+
+    // Content animation: fades in quickly and out later
+    const contentOpacity = useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0, 1, 1, 0]);
+    const contentScale = useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0.92, 1, 1, 0.92]);
 
     return (
         <section
             ref={sectionRef}
-            className="relative w-full min-h-screen overflow-hidden"
+            className="relative w-full min-h-[70vh] flex items-center justify-center px-6 overflow-hidden bg-black"
         >
             {/* Full-bleed Parallax Photo */}
             <motion.div
                 style={{ y: imageY }}
-                className="absolute inset-0 w-full h-[120%] -top-[10%]"
+                className="absolute inset-0 w-full h-[140%] -top-[20%]"
             >
                 <img
                     src="/crowd_photo.jpg"
                     alt="Bridge community event"
                     className="w-full h-full object-cover object-center"
                 />
-                {/* Strong dark overlay so text is readable */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+                {/* Dark overlay for readability */}
+                <div className="absolute inset-0 bg-black/60" />
             </motion.div>
 
-            {/* Text pinned to bottom-left, animates in on scroll */}
-            <div className="relative z-10 flex flex-col justify-end min-h-screen px-8 md:px-20 pb-20 md:pb-28 pt-32">
-                <div className="max-w-4xl">
-                    {lines.map((line, i) => (
-                        <div key={line} className="overflow-hidden">
-                            <motion.h2
-                                initial={{ y: "110%", opacity: 0 }}
-                                whileInView={{ y: "0%", opacity: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{
-                                    duration: 0.85,
-                                    delay: i * 0.12,
-                                    ease: [0.22, 1, 0.36, 1],
-                                }}
-                                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight"
-                            >
-                                {line}
-                            </motion.h2>
-                        </div>
-                    ))}
-
-                    <div className="overflow-hidden mt-6">
-                        <motion.p
-                            initial={{ y: "110%", opacity: 0 }}
-                            whileInView={{ y: "0%", opacity: 1 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{
-                                duration: 0.85,
-                                delay: lines.length * 0.12 + 0.05,
-                                ease: [0.22, 1, 0.36, 1],
-                            }}
-                            className="text-lg md:text-2xl text-white/70 max-w-xl leading-relaxed"
-                        >
-                            {subtitle}
-                        </motion.p>
-                    </div>
-                </div>
-            </div>
+            {/* Centered Content */}
+            <motion.div
+                style={{
+                    opacity: contentOpacity,
+                    scale: contentScale
+                }}
+                className="relative z-10 max-w-lg mx-auto text-center"
+            >
+                <h2
+                    className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6"
+                    style={{ letterSpacing: "-1.5px" }}
+                >
+                    No swiping.<br />
+                    No algorithm guessing.<br />
+                    Just your people.
+                </h2>
+                <p className="text-white/50 text-base leading-relaxed max-w-sm mx-auto">
+                    {subtitle}
+                </p>
+            </motion.div>
         </section>
     );
 }
