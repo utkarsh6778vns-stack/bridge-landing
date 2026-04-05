@@ -19,9 +19,12 @@ export default function NoSwipingSection() {
         offset: ["start end", "end start"],
     });
 
-    // Photo moves upward (parallax) as section scrolls into view
-    // Subtle parallax that keeps image within bounds
-    const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+    // Photo moves downward (parallax) as section scrolls down
+    // We start with a negative offset and move to a positive one
+    const imageY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
+    // Text also moves downward as we scroll down
+    const textY = useTransform(scrollYProgress, [0, 1], ["-40px", "40px"]);
 
     return (
         <section
@@ -44,7 +47,10 @@ export default function NoSwipingSection() {
             </motion.div>
 
             {/* Text at top, withRice badge for consistency */}
-            <div className="relative z-10 flex flex-col justify-start h-full px-8 md:px-20 pb-20 pt-16 md:pt-24">
+            <motion.div
+                style={{ y: textY }}
+                className="relative z-10 flex flex-col justify-start h-full px-8 md:px-20 pb-20 pt-16 md:pt-24"
+            >
                 <div className="max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
@@ -91,7 +97,7 @@ export default function NoSwipingSection() {
                         </motion.p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }
