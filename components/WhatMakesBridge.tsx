@@ -48,7 +48,7 @@ export default function WhatMakesBridge() {
     }, [displayedText, isDeleting, currentWordIndex, words]);
 
     return (
-        <section className="min-h-screen bg-white text-black px-8 py-20 md:px-20 md:py-32 flex items-center">
+        <section className="min-h-screen bg-white dark:bg-[#0F0E0C] text-black dark:text-[#F7F7F2] px-8 py-20 md:px-20 md:py-32 flex items-center transition-colors duration-500">
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 {/* Left Column: Content */}
@@ -67,7 +67,7 @@ export default function WhatMakesBridge() {
                                 <span className="animate-pulse">|</span>
                             </span>
                         </div>
-                        <p className="mt-6 text-gray-500 text-sm font-medium">
+                        <p className="mt-6 text-gray-500 dark:text-gray-400 text-sm font-medium">
                             Beta launching at <span className="text-blue-500 font-bold">Rice</span> February 28th.
                         </p>
                     </div>
@@ -76,15 +76,15 @@ export default function WhatMakesBridge() {
                         {/* Feature 1 */}
                         <motion.div
                             whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
-                            className="bg-white shadow-md hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 cursor-pointer"
+                            className="bg-white dark:bg-white/5 shadow-md dark:shadow-lg hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 dark:border-white/10 cursor-pointer"
                         >
                             <div className="flex items-start space-x-4">
                                 <div className="bg-[#1E90FF] p-3 rounded-full shrink-0">
                                     <Star className="w-6 h-6 text-white" fill="white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Your people help you find your person.</h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed">
+                                    <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Your people help you find your person.</h3>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                         Friends help validate matches before they ever reach you.
                                     </p>
                                 </div>
@@ -94,15 +94,15 @@ export default function WhatMakesBridge() {
                         {/* Feature 2 */}
                         <motion.div
                             whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
-                            className="bg-white shadow-md hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 cursor-pointer"
+                            className="bg-white dark:bg-white/5 shadow-md dark:shadow-lg hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 dark:border-white/10 cursor-pointer"
                         >
                             <div className="flex items-start space-x-4">
                                 <div className="bg-[#1E90FF] p-3 rounded-full shrink-0">
                                     <Clock className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Earn karma. Build streaks.</h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed">
+                                    <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Earn karma. Build streaks.</h3>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                         The more you help others, the more visible your profile becomes.
                                     </p>
                                 </div>
@@ -112,15 +112,15 @@ export default function WhatMakesBridge() {
                         {/* Feature 3 */}
                         <motion.div
                             whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
-                            className="bg-white shadow-md hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 cursor-pointer"
+                            className="bg-white dark:bg-white/5 shadow-md dark:shadow-lg hover:shadow-2xl transition-all duration-200 p-6 rounded-2xl border border-gray-100/50 dark:border-white/10 cursor-pointer"
                         >
                             <div className="flex items-start space-x-4">
                                 <div className="bg-[#1E90FF] p-3 rounded-full shrink-0">
                                     <Users className="w-6 h-6 text-white" fill="white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg text-gray-900 mb-2">Assist your friends.</h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed">
+                                    <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Assist your friends.</h3>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                         Not a fit for you? Recommend them to a friend who may be a better fit.
                                     </p>
                                 </div>

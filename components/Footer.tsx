@@ -8,7 +8,7 @@ export default function Footer() {
     const accentColor = "#3B82F6";
 
     return (
-        <footer id="contact" className="bg-gray-50 text-gray-700 px-8 py-16 md:px-20 md:py-20">
+        <footer id="contact" className="bg-gray-50 dark:bg-[#0F0E0C] text-gray-700 dark:text-gray-300 px-8 py-16 md:px-20 md:py-20 transition-colors duration-500">
             <div className="max-w-7xl mx-auto">
 
                 {/* Top Section: Logo and Copyright */}
@@ -24,11 +24,11 @@ export default function Footer() {
                         <img
                             src="/bridge_logo_new.png"
                             alt="Bridge Logo"
-                            className="h-10 md:h-14 w-auto object-contain"
+                            className="h-10 md:h-14 w-auto object-contain dark:invert"
                         />
                     </div>
 
-                    <p className="text-gray-600 text-sm font-medium mb-8">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-8">
                         © 2025 Bridge. The first community-driven dating experience.
                     </p>
 
@@ -79,9 +79,9 @@ export default function Footer() {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="border-t border-gray-200 pt-8"
+                    className="border-t border-gray-200 dark:border-gray-800 pt-8 transition-colors"
                 >
-                    <p className="text-xs text-gray-500 text-center leading-relaxed max-w-4xl mx-auto">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 text-center leading-relaxed max-w-4xl mx-auto">
                         When you download the Bridge mobile app and create an account, you agree to receive SMS text messages for one-time verification codes to authenticate your account. No promotional or marketing messages will be sent. Message and data rates may apply. Reply STOP to opt out or HELP for support.
                     </p>
                 </motion.div>

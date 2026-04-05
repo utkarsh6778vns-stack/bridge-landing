@@ -1,14 +1,18 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 interface MainContentProps {
     showContent?: boolean;
 }
 
 export default function MainContent({ showContent = false }: MainContentProps) {
-    const accentColor = "#3B82F6";
+    const { scrollY } = useScroll();
+
+    // Animate hero based on scroll purely vertically downwards (no fading)
+    // Moving only a little down (slower parallax)
+    const heroY = useTransform(scrollY, [0, 1000], [0, 150]);
 
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-black text-white">
@@ -49,44 +53,64 @@ export default function MainContent({ showContent = false }: MainContentProps) {
             </motion.div>
 
             {/* Hero Content - Full Viewport Height */}
-            <main className="relative z-10 flex flex-col justify-end h-[100dvh] px-6 md:px-20 pb-20 md:pb-16" id="home">
-                <div className="max-w-5xl">
-                    <motion.h1
-                        className="text-[1.6rem] sm:text-2xl md:text-6xl font-extrabold leading-[1.3] md:leading-[1.1] tracking-tight text-white mb-2"
-                    >
-                        {["The community finds the fit", "We bridge the gap"].map((line, i) => (
-                            <motion.div
-                                key={i}
-                                className="py-0.5 md:py-1"
-                                initial="hidden"
-                                animate={showContent ? "visible" : "hidden"}
-                                variants={{
-                                    hidden: {},
-                                    visible: {
-                                        transition: {
-                                            staggerChildren: 0.08,
-                                            delayChildren: i * 2.5,
-                                        }
-                                    }
-                                }}
-                            >
-                                {line.split("").map((char, index) => (
-                                    <motion.span
-                                        key={index}
-                                        variants={{
-                                            hidden: { opacity: 0 },
-                                            visible: { opacity: 1 }
-                                        }}
-                                        className="inline-block"
-                                    >
-                                        {char === " " ? "\u00A0" : char}
-                                    </motion.span>
-                                ))}
-                            </motion.div>
-                        ))}
-                    </motion.h1>
-                </div>
-            </main>
+            <motion.main
+                style={{ y: heroY }}
+                className="relative z-10 flex-1 flex flex-col items-center justify-center text-center h-[100dvh] px-6 pb-24" id="home"
+            >
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
+                    className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#34D399]/20 to-[#059669]/20 border border-[#34D399]/40 shadow-[0_0_20px_rgba(52,211,153,0.3)] ring-1 ring-white/10 rounded-full px-4 py-1.5 mb-8 backdrop-blur-md"
+                >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-pulse"></span>
+                    <span className="text-[#34D399] text-xs font-semibold tracking-wide">Live at Rice University</span>
+                </motion.div>
+
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-5xl md:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-10"
+                    style={{ letterSpacing: "-2px" }}
+                >
+                    Your people help you<br />find your person.
+                </motion.h1>
+
+                <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#437FFF] to-[#2B65F9] text-white font-bold text-lg rounded-2xl shadow-xl shadow-blue-500/35 hover:shadow-blue-500/55 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                >
+                    Join Bridge
+                </motion.button>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    className="mt-6 text-white/30 text-sm"
+                >
+                    Only @rice.edu. Free forever.
+                </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1, duration: 1 }}
+                    className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex justify-center pb-10"
+                >
+                    <div className="w-5 h-8 border-2 border-white/20 rounded-full flex justify-center pt-1.5">
+                        <div className="w-1 h-2 bg-white/40 rounded-full animate-bounce"></div>
+                    </div>
+                </motion.div>
+            </motion.main>
         </div>
     );
 }

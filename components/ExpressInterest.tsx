@@ -61,7 +61,7 @@ export default function ExpressInterest() {
     };
 
     return (
-        <section id="waitlist" className="min-h-screen bg-white text-black px-8 py-20 md:px-20 md:py-32 flex items-center">
+        <section id="waitlist" className="min-h-screen bg-white dark:bg-[#0F0E0C] text-black dark:text-[#F7F7F2] px-8 py-20 md:px-20 md:py-32 flex items-center transition-colors duration-500">
             <div className="max-w-7xl mx-auto w-full">
 
                 {/* Header */}
@@ -75,12 +75,12 @@ export default function ExpressInterest() {
                     <h2 className="text-4xl md:text-6xl font-bold mb-4">
                         Express Your <span className="text-[#1E90FF]">Interest</span>
                     </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-gray-600 dark:text-gray-400 text-lg">
                         Join the Bridge waitlist now
                     </p>
 
                     {/* Badge */}
-                    <div className="mt-6 inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-4 py-2 rounded-full">
+                    <div className="mt-6 inline-flex items-center gap-2 bg-blue-900/20 border border-blue-500/30 px-4 py-2 rounded-full">
                         <Users className="w-5 h-5 text-[#1E90FF]" />
                         <span className="text-sm font-semibold text-[#1E90FF]">1,000+ others interested in Bridge</span>
                     </div>
@@ -95,12 +95,12 @@ export default function ExpressInterest() {
                         transition={{ duration: 0.7 }}
                         viewport={{ once: true }}
                     >
-                        <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-xl p-8 md:p-10 border border-gray-100">
+                        <form onSubmit={handleSubmit} className="bg-white dark:bg-[#1A1A1A] rounded-3xl shadow-xl dark:shadow-2xl p-8 md:p-10 border border-gray-100 dark:border-white/10 transition-colors duration-500">
 
                             {/* Name & Email Row */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                         Name*
                                     </label>
                                     <input
@@ -111,12 +111,12 @@ export default function ExpressInterest() {
                                         onChange={handleChange}
                                         placeholder="Your name"
                                         required
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
+                                        className="w-full px-4 py-3 bg-transparent dark:bg-[#0F0E0C] text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                         Email*
                                     </label>
                                     <input
@@ -127,7 +127,7 @@ export default function ExpressInterest() {
                                         onChange={handleChange}
                                         placeholder="you@example.com"
                                         required
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
+                                        className="w-full px-4 py-3 bg-transparent dark:bg-[#0F0E0C] text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
                                     />
                                     <p className="text-xs text-gray-500 mt-1">Use your student email (.edu) if you have one.</p>
                                 </div>
@@ -136,7 +136,7 @@ export default function ExpressInterest() {
                             {/* Phone & Location Row */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
-                                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                         Phone*
                                     </label>
                                     <input
@@ -147,12 +147,12 @@ export default function ExpressInterest() {
                                         onChange={handleChange}
                                         placeholder="(555) 555-5555"
                                         required
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
+                                        className="w-full px-4 py-3 bg-transparent dark:bg-[#0F0E0C] text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="location" className="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label htmlFor="location" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                         Location*
                                     </label>
                                     <input
@@ -163,7 +163,7 @@ export default function ExpressInterest() {
                                         onChange={handleChange}
                                         placeholder="City, State"
                                         required
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
+                                        className="w-full px-4 py-3 bg-transparent dark:bg-[#0F0E0C] text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 rounded-xl focus:ring-2 focus:ring-[#1E90FF] focus:border-transparent outline-none transition-all"
                                     />
                                 </div>
                             </div>
@@ -176,9 +176,9 @@ export default function ExpressInterest() {
                                         name="smsConsent"
                                         checked={formData.smsConsent}
                                         onChange={handleChange}
-                                        className="mt-1 w-4 h-4 text-[#1E90FF] border-gray-300 rounded focus:ring-[#1E90FF]"
+                                        className="mt-1 w-4 h-4 text-[#1E90FF] bg-transparent border-gray-300 dark:border-gray-600 rounded focus:ring-[#1E90FF]"
                                     />
-                                    <span className="text-xs text-gray-600 leading-relaxed">
+                                    <span className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                                         I agree to receive SMS/text messages from Bridge for one-time verification codes if I download the app. Messages will never include marketing or promotions.
                                     </span>
                                 </label>

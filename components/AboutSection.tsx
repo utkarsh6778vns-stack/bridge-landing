@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="bg-white text-black px-8 py-12 md:px-20 md:py-20 overflow-hidden">
+        <section id="about" className="bg-white dark:bg-[#0F0E0C] text-black dark:text-[#F7F7F2] px-8 py-12 md:px-20 md:py-20 overflow-hidden transition-colors duration-500">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.p
@@ -85,10 +85,10 @@ export default function AboutSection() {
                             whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-blue-50 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
+                            className="bg-blue-50 dark:bg-white/5 border border-transparent dark:border-white/10 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
                         >
-                            <h3 className="font-bold text-lg md:text-xl mb-2">Curated individual matches</h3>
-                            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                            <h3 className="font-bold text-lg md:text-xl mb-2 text-gray-900 dark:text-white">Curated individual matches</h3>
+                            <p className="text-sm md:text-base text-gray-700 dark:text-gray-400 leading-relaxed">
                                 Where you only engage with one person at a time
                             </p>
                         </motion.div>
@@ -103,11 +103,11 @@ export default function AboutSection() {
                             whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                             viewport={{ once: true }}
-                            className="bg-blue-50 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
+                            className="bg-blue-50 dark:bg-white/5 border border-transparent dark:border-white/10 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
                         >
-                            <h3 className="font-bold text-lg md:text-xl mb-2">5 minutes a day</h3>
-                            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                                Because meaningful connection shouldn't feel like another job.
+                            <h3 className="font-bold text-lg md:text-xl mb-2 text-gray-900 dark:text-white">5 minutes a day</h3>
+                            <p className="text-sm md:text-base text-gray-700 dark:text-gray-400 leading-relaxed">
+                                Because meaningful connection shouldn&apos;t feel like another job.
                             </p>
                         </motion.div>
                     </div>
@@ -119,10 +119,10 @@ export default function AboutSection() {
                         whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.2 } }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="bg-blue-50 p-8 md:p-10 rounded-2xl flex flex-col justify-center shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
+                        className="bg-blue-50 dark:bg-white/5 border border-transparent dark:border-white/10 p-8 md:p-10 rounded-2xl flex flex-col justify-center shadow-md hover:shadow-2xl transition-shadow duration-200 cursor-pointer"
                     >
-                        <h3 className="text-xl md:text-2xl font-bold mb-4">Intentional Algorithmic Dating</h3>
-                        <p className="text-sm md:text-base leading-relaxed text-gray-700">
+                        <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white">Intentional Algorithmic Dating</h3>
+                        <p className="text-sm md:text-base leading-relaxed text-gray-700 dark:text-gray-400">
                             The algorithm, powered by real human insights, suggests the single best match for you. Then your friends decide if the fit is right or not.
                         </p>
                     </motion.div>
