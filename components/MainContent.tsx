@@ -79,15 +79,16 @@ export default function MainContent({ showContent = false }: MainContentProps) {
                     Your people help you<br />find your person.
                 </motion.h1>
 
-                <motion.button
+                <motion.a
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#437FFF] to-[#2B65F9] text-white font-bold text-lg rounded-2xl shadow-xl shadow-blue-500/35 hover:shadow-blue-500/55 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                    href="#waitlist"
+                    className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-[length:200%_auto] hover:bg-[position:right_center] text-white px-8 py-4 rounded-[16px] font-bold text-lg md:text-xl transition-all duration-500 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] animate-fade-in-up animation-delay-900 mx-auto w-fit block"
                 >
-                    Join Bridge
-                </motion.button>
+                    Get Bridge
+                </motion.a>
 
                 <motion.p
                     initial={{ opacity: 0, y: 10 }}

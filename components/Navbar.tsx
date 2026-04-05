@@ -64,7 +64,7 @@ export default function Navbar() {
                     whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
-                    className={`px-8 py-3 rounded-full font-bold transition-all shadow-xl inline-block ${isScrolled ? "bg-blue-600 hover:bg-blue-700 text-white" : "bg-white text-black hover:bg-white/95"
+                    className={`px-8 py-3 rounded-full font-bold transition-all shadow-xl inline-block ${isScrolled ? "bg-[#1E90FF] hover:bg-[#1873CC] text-white" : "bg-white text-black hover:bg-white/95"
                         }`}
                 >
                     Join Waitlist
@@ -78,15 +78,15 @@ export default function Navbar() {
                 </motion.div>
             </nav>
 
-            {/* Mobile Navigation - Only "Join Waitlist" Button */}
+            {/* Mobile Navigation - Only "Get Bridge" Button */}
             <motion.a
                 href="#waitlist"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(79, 70, 229, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
-                className="bg-blue-500 text-white px-5 py-2 rounded-full font-bold shadow-xl md:hidden text-sm"
+                className="bg-[#1E90FF] text-white px-5 py-2 rounded-full font-bold shadow-xl md:hidden text-sm"
             >
                 Join Waitlist
             </motion.a>
