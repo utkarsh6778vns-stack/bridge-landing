@@ -24,7 +24,7 @@ export default function Footer() {
                         <img
                             src="/bridge_logo_new.png"
                             alt="Bridge Logo"
-                            className="h-10 md:h-14 w-auto object-contain dark:invert"
+                            className="h-10 md:h-14 w-auto object-contain"
                         />
                     </div>
 

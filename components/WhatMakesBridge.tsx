@@ -67,9 +67,7 @@ export default function WhatMakesBridge() {
                                 <span className="animate-pulse">|</span>
                             </span>
                         </div>
-                        <p className="mt-6 text-gray-500 dark:text-gray-400 text-sm font-medium">
-                            Beta launching at <span className="text-blue-500 font-bold">Rice</span> February 28th.
-                        </p>
+
                     </div>
 
                     <div className="space-y-6">
