@@ -19,55 +19,64 @@ export default function NoSwipingSection() {
         offset: ["start end", "end start"],
     });
 
-    // Image scrolls upward as section scrolls into view (parallax)
-    const imageY = useTransform(scrollYProgress, [0, 1], ["10%", "-15%"]);
+    // Photo moves upward (parallax) as section scrolls into view
+    const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
 
     return (
         <section
             ref={sectionRef}
-            className="relative w-full bg-white dark:bg-[#0F0E0C] overflow-hidden transition-colors duration-500"
+            className="relative w-full min-h-screen overflow-hidden"
         >
-            {/* Parallax Photo */}
-            <div className="relative w-full h-[65vh] md:h-[80vh] overflow-hidden">
-                <motion.div
-                    style={{ y: imageY }}
-                    className="absolute inset-0 w-full h-[120%] -top-[10%]"
-                >
-                    <img
-                        src="/crowd_photo.jpg"
-                        alt="Bridge community event"
-                        className="w-full h-full object-cover object-center"
-                    />
-                    {/* Dark overlay gradient at bottom */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70" />
-                </motion.div>
-            </div>
+            {/* Full-bleed Parallax Photo */}
+            <motion.div
+                style={{ y: imageY }}
+                className="absolute inset-0 w-full h-[120%] -top-[10%]"
+            >
+                <img
+                    src="/crowd_photo.jpg"
+                    alt="Bridge community event"
+                    className="w-full h-full object-cover object-center"
+                />
+                {/* Strong dark overlay so text is readable */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+            </motion.div>
 
-            {/* Text block */}
-            <div className="relative z-10 bg-white dark:bg-[#0F0E0C] px-8 md:px-20 py-20 md:py-28 transition-colors duration-500">
-                <div className="max-w-4xl mx-auto">
+            {/* Text pinned to bottom-left, animates in on scroll */}
+            <div className="relative z-10 flex flex-col justify-end min-h-screen px-8 md:px-20 pb-20 md:pb-28 pt-32">
+                <div className="max-w-4xl">
                     {lines.map((line, i) => (
-                        <motion.h2
-                            key={line}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-80px" }}
-                            transition={{ duration: 0.7, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-4xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white leading-tight tracking-tight mb-2"
-                        >
-                            {line}
-                        </motion.h2>
+                        <div key={line} className="overflow-hidden">
+                            <motion.h2
+                                initial={{ y: "110%", opacity: 0 }}
+                                whileInView={{ y: "0%", opacity: 1 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{
+                                    duration: 0.85,
+                                    delay: i * 0.12,
+                                    ease: [0.22, 1, 0.36, 1],
+                                }}
+                                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight"
+                            >
+                                {line}
+                            </motion.h2>
+                        </div>
                     ))}
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-80px" }}
-                        transition={{ duration: 0.7, delay: lines.length * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                        className="mt-8 text-lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed"
-                    >
-                        {subtitle}
-                    </motion.p>
+                    <div className="overflow-hidden mt-6">
+                        <motion.p
+                            initial={{ y: "110%", opacity: 0 }}
+                            whileInView={{ y: "0%", opacity: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{
+                                duration: 0.85,
+                                delay: lines.length * 0.12 + 0.05,
+                                ease: [0.22, 1, 0.36, 1],
+                            }}
+                            className="text-lg md:text-2xl text-white/70 max-w-xl leading-relaxed"
+                        >
+                            {subtitle}
+                        </motion.p>
+                    </div>
                 </div>
             </div>
         </section>
